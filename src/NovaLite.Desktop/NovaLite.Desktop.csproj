@@ -5,6 +5,7 @@
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>NovaHub</AssemblyName>
+    <ApplicationIcon>Assets/NovaHub.ico</ApplicationIcon>
     <Version>1.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
