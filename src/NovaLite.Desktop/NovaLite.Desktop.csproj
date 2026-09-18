@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>NovaHub</AssemblyName>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Remove="System.Drawing" />
+    <Using Remove="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup><ProjectReference Include="../NovaLite.Core/NovaLite.Core.csproj" /></ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets/NovaHub_Black_Icon.png" />
+    <Resource Include="Assets/NovaHub_White_Icon.png" />
+    <Resource Include="Assets/NovaHub_Logo_Black_No_Icon.png" />
+    <Resource Include="Assets/NovaHub_Logo_White_No_Icon.png" />
+  </ItemGroup>
+</Project>
+
+
+
+
+
+
