@@ -25,6 +25,9 @@ public partial class MainWindow : Window
         LanguageManager.Apply(LanguageManager.LoadPreference());
         ThemeManager.Apply(ThemeManager.LoadPreference());
         InitializeComponent();
+        // The source PNG includes transparent margins that shrink the taskbar icon.
+        Icon = new CroppedBitmap(LoadBrandAsset("NovaHub_White_Icon.png"),
+            new Int32Rect(113, 8, 1040, 1040));
         UpdateHeaderBrand();
         _tray = new TrayBatteryIcon();
         _tray.ShowRequested += (_, _) => RestoreFromTray();
@@ -89,7 +92,12 @@ public partial class MainWindow : Window
     {
         var color = ThemeManager.CurrentKey == "stellar-white" ? "Black" : "White";
         HeaderIcon.Source = LoadBrandAsset($"NovaHub_{color}_Icon.png");
-        HeaderLogo.Source = LoadBrandAsset($"NovaHub_Logo_{color}_No_Icon.png");
+        var logo = LoadBrandAsset($"NovaHub_Logo_{color}_No_Icon.png");
+        // The black PNG has a larger transparent canvas than the white one.
+        // Match their canvases so switching themes keeps the lettering the same size.
+        HeaderLogo.Source = color == "Black"
+            ? new CroppedBitmap(logo, new Int32Rect(0, 90, 1543, 539))
+            : logo;
     }
 
     private static BitmapImage LoadBrandAsset(string fileName) => new(

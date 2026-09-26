@@ -24,5 +24,7 @@ public partial class App : Application
             window.RenderSmoke(Path.GetFullPath(e.Args[2]), languageKey: e.Args[1]);
         else if (e.Args.Length == 3 && e.Args[0] == "--smoke-settings")
             window.RenderSmoke(Path.GetFullPath(e.Args[2]), languageKey: e.Args[1], showSettings: true);
+        else if (e.Args.Length == 2 && e.Args[0] == "--generate-showcase")
+            window.GenerateShowcase(Path.GetFullPath(e.Args[1]));
     }
 }
