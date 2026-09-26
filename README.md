@@ -1,4 +1,8 @@
 <p align="center">
+  <b><a href="README.md">🇧🇷 Português</a></b> &nbsp;•&nbsp; <b><a href="README.en.md">🇺🇸 English</a></b>
+</p>
+
+<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="src/NovaLite.Desktop/Assets/NovaHub_White_Icon.png">
     <source media="(prefers-color-scheme: light)" srcset="src/NovaLite.Desktop/Assets/NovaHub_Black_Icon.png">
@@ -15,7 +19,7 @@
 </p>
 
 <p align="center">
-  Uma central gratuita e open source para testar e acompanhar controles GameSir Nova Lite no Windows.
+  Central gratuita, moderna e open source para testar, calibrar e monitorar controles GameSir Nova Lite no Windows.
 </p>
 
 <p align="center">
@@ -24,94 +28,127 @@
 
 <p align="center">
   <img alt="Windows 10 e 11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows">
-  <img alt="Licença MIT" src="https://img.shields.io/badge/licença-MIT-green">
+  <img alt="Licença MIT" src="https://img.shields.io/badge/Licença-MIT-green">
+  <img alt=".NET 10" src="https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet">
 </p>
+
+---
 
 ## Sobre o projeto
 
-O NovaHub foi criado para oferecer uma forma simples de conferir o funcionamento do GameSir Nova Lite no Windows. Em uma única tela, é possível visualizar os comandos enviados pelo controle, testar analógicos, gatilhos, botões e vibração, além de acompanhar as informações de bateria disponibilizadas por cada modo de conexão.
+**NovaHub** é uma central para Windows feita para quem usa o **GameSir Nova Lite** e quer ter mais controle sobre o próprio controle.
 
-Quando a janela é minimizada ou fechada, o NovaHub permanece na área de ícones ocultos do Windows. Por esse menu, você pode conferir rapidamente quantos controles estão conectados e visualizar o nível de bateria de cada um sem precisar manter o aplicativo aberto na tela.
+Em uma única interface, você pode testar os comandos em tempo real, conferir a precisão e a circularidade dos analógicos e testar a vibração de cada motor.
 
-O projeto é gratuito, não possui anúncios, telemetria ou recursos pagos. Seu objetivo é disponibilizar uma ferramenta útil para quem possui o controle e quer verificar seu funcionamento de maneira clara, sem depender de uma plataforma de jogos.
+O **NovaHub** foi pensado para ser **leve, simples e discreto**. Você pode conectar até **4 controles ao mesmo tempo**, cada um em sua própria aba, e deixar o aplicativo rodando em segundo plano pela bandeja do Windows, acompanhando o status e a bateria dos dispositivos sem precisar manter a janela aberta.
 
-> O NovaHub é um projeto independente e não possui vínculo oficial com a GameSir.
+O **NovaHub** é **100% gratuito, portátil, open source, sem anúncios e sem telemetria**.
+
+Feito para testar, acompanhar e aproveitar melhor o seu controle.
+
+
+> O NovaHub é um projeto independente e comunitário de código aberto, sem vínculo comercial com a GameSir.
+
+---
 
 ## Interface
 
-![Prévia animada dos temas do NovaHub](docs/novahub-themes.gif)
+A interface do **NovaHub** foi projetado para acompanhar as diferentes variantes do GameSir Nova Lite.
 
-### Monitoramento nos ícones ocultos
+![Prévia animada dos temas e recursos do NovaHub](docs/novahub-themes.gif)
 
-Ao minimizar ou fechar a janela, o NovaHub continua mostrando os controles conectados e o nível de bateria de cada um no menu dos ícones ocultos do Windows.
+### Monitoramento discreto na bandeja 
 
-![Monitoramento de dois controles pelo NovaHub nos ícones ocultos do Windows](docs/novahub-tray.png)
+Ao minimizar ou fechar a janela principal, o aplicativo vai para a área de **ícones ocultos do Windows**. Pelo menu de contexto, é possível acompanhar a qualquer momento quantos controles estão emparelhados e o nível de carga de cada um, sem interferir na sua jogatina.
 
-## Principais recursos
+<p align="center">
+  <img src="docs/novahub-tray.png" alt="Monitoramento de controles pelo NovaHub nos ícones ocultos do Windows" width="360">
+</p>
 
-- visualização em tempo real de botões, direcionais, analógicos e gatilhos;
-- teste de precisão dos analógicos;
-- teste de circularidade com representação visual do movimento;
-- teste de vibração individual ou simultâneo dos motores;
-- identificação dos modos Dongle 2,4 GHz, cabo USB, Switch, DualShock e Android;
-- leitura do nível de bateria quando disponibilizado pelo protocolo do controle;
-- exibição da bateria de vários controles na área de ícones ocultos do Windows;
-- tratamento de interfaces duplicadas para evitar contar uma única conexão como vários controles;
-- combinações de botões do Nova Lite apresentadas visualmente;
-- temas inspirados nas cores do controle;
-- interface disponível em português e inglês.
-
-## Baixar e usar
-
-1. Abra a página da [versão mais recente](https://github.com/otaviossousa/NovaHub/releases/latest).
-2. Baixe `NovaHub-<versão>-win-x64.zip`.
-3. Extraia todo o conteúdo do ZIP para uma pasta.
-4. Execute `NovaHub.exe`.
-
-O pacote é portátil: não precisa ser instalado e não exige uma instalação separada do .NET. Ele é destinado ao Windows 10 ou Windows 11 de 64 bits.
-
-O Windows pode exibir um aviso do SmartScreen porque o executável ainda não possui assinatura digital. Antes de executá-lo, confirme que o arquivo foi baixado da página oficial de Releases deste repositório.
+---
 
 ## Bateria e modos de conexão
 
-O Nova Lite pode se apresentar ao Windows de maneiras diferentes dependendo do modo escolhido no controle. Por isso, a informação de bateria pode variar entre uma categoria — vazia, baixa, média ou cheia — e uma estimativa percentual.
+O GameSir Nova Lite pode ser emparelhado ao Windows em diferentes modos de operação. Por isso, a forma como a bateria e o transporte são apresentados varia conforme a tecnologia ativa:
 
-O NovaHub exibe apenas informações fornecidas por fontes reconhecidas. Quando o modo de conexão não disponibiliza um nível confiável, o aplicativo informa que a leitura não está disponível em vez de inventar uma porcentagem.
+![Demonstração dos níveis de bateria e modos de conexão no NovaHub](docs/novahub-battery-modes.gif)
+
+### Como cada modo se comporta
+
+* **Dongle USB 2,4 GHz**: Nesse modo o controle comunica-se via XInput. A bateria é classificada nas categorias oficiais do padrão: **Vazia**, **Baixa**, **Média** ou **Cheia**.
+* **Cabo USB Direto**: Modo cabeado de menor latência possível e alimentação constante. O controle permanece energizado durante o uso.
+* **Bluetooth (Switch, DualShock 4 ou Android)**: Em conexões Bluetooth compatíveis, o NovaHub lê relatórios estendidos HID para identificar o dispositivo e reportar a bateria quando disponível pelo firmware.
+* **Política de Integridade**: O NovaHub prioriza fontes de dados oficiais. Se determinado modo de conexão não disponibilizar telemetria confiável, o aplicativo apresenta o status como indisponível (`?`).
+
+---
+
+## Como baixar e usar
+
+### Opção 1: Microsoft Store
+
+O projeto está disponivel na [Microsoft Store](https://apps.microsoft.com/detail/9NDD0QW2VXMS?hl=pt-br&gl=BR&ocid), acesse diretamente da loja no seu PC e aproveite.
+
+<p align="center">
+  <img src="docs/MS_NovaHub.png" alt="Pagina do NovaHub na Microsoft Store">
+</p>
+
+
+### Opção 2: Pacote Portátil
+
+1. Acesse a página de [Releases oficiais](https://github.com/otaviossousa/NovaHub/releases/latest).
+2. Baixe o arquivo `NovaHub-<versão>-win-x64.zip`.
+3. Extraia o conteúdo para a pasta de sua preferência.
+4. Execute `NovaHub.exe`.
+
+> [!TIP]
+> O executável é 100% autocontido: não requer instalador e não precisa de instalação separada do .NET Runtime. É compatível com Windows 10 e Windows 11 de 64 bits.
+
+> [!NOTE]
+> O Windows pode exibir um aviso preventivo do SmartScreen na primeira execução por se tratar de um executável open source sem certificado pago. Certifique-se de baixar o pacote sempre através da página oficial de Releases deste repositório.
+
+---
 
 ## Privacidade e segurança
 
-- não existe telemetria;
-- nenhuma leitura do controle é enviada pela internet;
-- as preferências de tema e idioma ficam armazenadas localmente;
-- o NovaHub não atualiza firmware;
-- o aplicativo não altera configurações permanentes do controle;
-- links externos só são abertos quando você seleciona uma opção na área de configurações.
+* **Zero telemetria**: Nenhuma métrica de uso, diagnóstico ou leitura é gravada externamente.
+* **Segurança local**: Todas as leituras e preferências de idioma e tema permanecem salvas exclusivamente no seu computador.
+* **Sem alterações invasivas**: O NovaHub não modifica o firmware do controle nem sobrescreve memórias de calibração permanente.
+* **Transparência de rede**: Links externos (manual oficial, perfil do autor e repositório) só são acessados quando você clica deliberadamente neles nas configurações.
 
-## Documentação do controle
-
-As instruções de pareamento, calibração, combinações e funcionamento do controle estão disponíveis no [manual oficial do GameSir Nova Lite](https://gamesir.com/pt-BR/support/manuals/gamesir-nova-lite).
+---
 
 ## Compilar o código-fonte
 
-Pré-requisitos:
+Se desejar inspecionar o código, contribuir ou gerar sua própria compilação local:
 
-- Windows 10 ou Windows 11;
-- SDK do .NET 10;
-- PowerShell.
+### Pré-requisitos
 
-Clone o repositório e execute:
+* Windows 10 ou Windows 11 (64 bits);
+* SDK do .NET 10 instalado;
+* PowerShell 5.1 ou superior.
+
+### Compilação e testes
+
+Clone o repositório e execute no PowerShell:
 
 ```powershell
 .\build.ps1
 ```
 
-O script restaura as dependências, compila a aplicação e executa as 61 verificações do projeto. Para gerar o mesmo ZIP portátil disponibilizado nas Releases:
+
+Para gerar o mesmo pacote ZIP portátil disponibilizado nas Releases oficiais:
 
 ```powershell
 .\build.ps1 -Package
 ```
 
-Os arquivos gerados ficam em `artifacts` e não são incluídos no histórico do Git.
+---
+
+## Documentação oficial do controle
+
+Para consultar manuais de fábrica, instruções de calibração manual e procedimentos de emparelhamento por hardware, visite o [Manual oficial do GameSir Nova Lite](https://gamesir.com/pt-BR/support/manuals/gamesir-nova-lite).
+
+---
 
 ## Contribuir com o projeto
 
