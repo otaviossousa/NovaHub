@@ -14,17 +14,23 @@ Invoke-Dotnet build 'src/NovaLite.Desktop/NovaLite.Desktop.csproj' -c Release --
 Invoke-Dotnet restore 'tests/NovaLite.Checks/NovaLite.Checks.csproj' --configfile NuGet.Config '-p:NuGetAudit=false' --nologo
 Invoke-Dotnet run --project 'tests/NovaLite.Checks' -c Release --no-restore
 if ($Probe) {
-    Invoke-Dotnet 'tests/NovaLite.Checks/bin/Release/net10.0/NovaLite.Checks.dll' --probe 'artifacts/xinput-probe.json'
+    [xml]$project = Get-Content 'src/NovaLite.Desktop/NovaLite.Desktop.csproj' -Raw
+    $version = [string]$project.Project.PropertyGroup.Version
+    $diagnosticsPath = Join-Path $PSScriptRoot "artifacts\$version\diagnostics"
+    New-Item -ItemType Directory -Path $diagnosticsPath -Force | Out-Null
+    Invoke-Dotnet 'tests/NovaLite.Checks/bin/Release/net10.0/NovaLite.Checks.dll' --probe (Join-Path $diagnosticsPath 'xinput-probe.json')
 }
 if ($Package) {
     $artifactsRoot = Join-Path $PSScriptRoot 'artifacts'
     [xml]$project = Get-Content 'src/NovaLite.Desktop/NovaLite.Desktop.csproj' -Raw
     $version = [string]$project.Project.PropertyGroup.Version
     if ([string]::IsNullOrWhiteSpace($version)) { throw 'Versão do NovaHub não encontrada no projeto.' }
+    $portableArtifacts = Join-Path (Join-Path $artifactsRoot $version) 'portable'
     $packageName = "NovaHub-$version-win-x64"
-    $packagePath = Join-Path $artifactsRoot $packageName
-    $zipPath = Join-Path $artifactsRoot "$packageName.zip"
+    $packagePath = Join-Path $portableArtifacts $packageName
+    $zipPath = Join-Path $portableArtifacts "$packageName.zip"
     $checksumPath = "$zipPath.sha256"
+    New-Item -ItemType Directory -Path $portableArtifacts -Force | Out-Null
     if (Test-Path -LiteralPath $packagePath) {
         Remove-Item -LiteralPath $packagePath -Recurse -Force
     }
@@ -45,6 +51,7 @@ if ($Package) {
     Compress-Archive -Path (Join-Path $packagePath '*') -DestinationPath $zipPath -CompressionLevel Optimal
     $hash = (Get-FileHash -LiteralPath $zipPath -Algorithm SHA256).Hash.ToLowerInvariant()
     Set-Content -LiteralPath $checksumPath -Value "$hash  $packageName.zip" -Encoding ascii
+    Remove-Item -LiteralPath $packagePath -Recurse -Force
     Write-Output "Release disponível em $zipPath"
 }
 
