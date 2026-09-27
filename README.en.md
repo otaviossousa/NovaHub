@@ -144,6 +144,9 @@ To generate the same portable ZIP package provided in official Releases:
 .\build.ps1 -Package
 ```
 
+The portable ZIP and its SHA-256 checksum are saved to `artifacts/<version>/portable/`.
+The Microsoft Store MSIX package and its checksum are saved to `artifacts/<version>/store/`.
+
 ---
 
 ## Official controller documentation
