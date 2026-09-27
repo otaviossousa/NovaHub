@@ -9,7 +9,6 @@ $toolsProject = Join-Path $PSScriptRoot "MsixTools.csproj"
 $toolsPackages = Join-Path $projectRoot ".tools\msix"
 $nugetConfig = Join-Path $projectRoot "NuGet.Config"
 $artifactsPath = Join-Path $projectRoot "artifacts"
-$stagingPath = Join-Path $artifactsPath "msix-layout"
 $projectDocument = [xml](Get-Content -LiteralPath $projectPath -Raw)
 $appVersion = [string]$projectDocument.Project.PropertyGroup.Version
 $manifestDocument = [xml](Get-Content -LiteralPath $manifestPath -Raw)
@@ -17,8 +16,12 @@ $manifestVersion = [string]$manifestDocument.Package.Identity.Version
 if ($manifestVersion -ne "$appVersion.0") {
     throw "A versão do manifesto ($manifestVersion) não corresponde à versão do aplicativo ($appVersion)."
 }
-$packagePath = Join-Path $artifactsPath "NovaHub-$appVersion-x64.msix"
+$versionArtifactsPath = Join-Path $artifactsPath $appVersion
+$storeArtifactsPath = Join-Path $versionArtifactsPath "store"
+$stagingPath = Join-Path $storeArtifactsPath ".msix-layout"
+$packagePath = Join-Path $storeArtifactsPath "NovaHub-$appVersion-x64.msix"
 $checksumPath = "$packagePath.sha256"
+New-Item -ItemType Directory -Path $storeArtifactsPath -Force | Out-Null
 
 $makeAppx = Get-Command makeappx.exe -ErrorAction SilentlyContinue | Select-Object -First 1
 if (-not $makeAppx) {
