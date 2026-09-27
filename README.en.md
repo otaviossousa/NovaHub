@@ -2,11 +2,13 @@
   <b><a href="README.md">🇧🇷 Português</a></b> &nbsp;•&nbsp; <b><a href="README.en.md">🇺🇸 English</a></b>
 </p>
 
+<br> <br> 
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="src/NovaLite.Desktop/Assets/NovaHub_White_Icon.png">
     <source media="(prefers-color-scheme: light)" srcset="src/NovaLite.Desktop/Assets/NovaHub_Black_Icon.png">
-    <img src="src/NovaLite.Desktop/Assets/NovaHub_Black_Icon.png" alt="NovaHub Icon" width="128">
+    <img src="src/NovaLite.Desktop/Assets/NovaHub_Black_Icon.png" alt="Ícone do NovaHub" width="300">
   </picture>
 </p>
 
@@ -14,7 +16,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="src/NovaLite.Desktop/Assets/NovaHub_Logo_White_No_Icon.png">
     <source media="(prefers-color-scheme: light)" srcset="src/NovaLite.Desktop/Assets/NovaHub_Logo_Black_No_Icon.png">
-    <img src="src/NovaLite.Desktop/Assets/NovaHub_Logo_Black_No_Icon.png" alt="NovaHub" width="460">
+    <img src="src/NovaLite.Desktop/Assets/NovaHub_Logo_Black_No_Icon.png" alt="NovaHub" width="500">
   </picture>
 </p>
 
@@ -86,7 +88,7 @@ The GameSir Nova Lite can connect to Windows through different operating modes. 
 
 ### Option 1: Microsoft Store
 
-The project is available on the [Microsoft Store](https://apps.microsoft.com/detail/9NDD0QW2VXMS?hl=pt-br&gl=BR&ocid), access it directly from the store on your PC and enjoy.
+The project is available on the **Microsoft Store**, access [NovaHub](https://apps.microsoft.com/detail/9NDD0QW2VXMS?hl=pt-br&gl=BR&ocid) directly from the official store on your PC and enjoy.
 
 <p align="center">
   <img src="docs/MS_NovaHub.png" alt="NovaHub page on Microsoft Store">

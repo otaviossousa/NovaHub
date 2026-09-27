@@ -2,11 +2,13 @@
   <b><a href="README.md">🇧🇷 Português</a></b> &nbsp;•&nbsp; <b><a href="README.en.md">🇺🇸 English</a></b>
 </p>
 
+<br> <br> 
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="src/NovaLite.Desktop/Assets/NovaHub_White_Icon.png">
     <source media="(prefers-color-scheme: light)" srcset="src/NovaLite.Desktop/Assets/NovaHub_Black_Icon.png">
-    <img src="src/NovaLite.Desktop/Assets/NovaHub_Black_Icon.png" alt="Ícone do NovaHub" width="128">
+    <img src="src/NovaLite.Desktop/Assets/NovaHub_Black_Icon.png" alt="Ícone do NovaHub" width="300">
   </picture>
 </p>
 
@@ -14,7 +16,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="src/NovaLite.Desktop/Assets/NovaHub_Logo_White_No_Icon.png">
     <source media="(prefers-color-scheme: light)" srcset="src/NovaLite.Desktop/Assets/NovaHub_Logo_Black_No_Icon.png">
-    <img src="src/NovaLite.Desktop/Assets/NovaHub_Logo_Black_No_Icon.png" alt="NovaHub" width="460">
+    <img src="src/NovaLite.Desktop/Assets/NovaHub_Logo_Black_No_Icon.png" alt="NovaHub" width="500">
   </picture>
 </p>
 
@@ -86,7 +88,7 @@ O GameSir Nova Lite pode ser emparelhado ao Windows em diferentes modos de opera
 
 ### Opção 1: Microsoft Store
 
-O projeto está disponivel na [Microsoft Store](https://apps.microsoft.com/detail/9NDD0QW2VXMS?hl=pt-br&gl=BR&ocid), acesse diretamente da loja no seu PC e aproveite.
+O projeto está disponivel na **Microsoft Store**, acesse o [NovaHub](https://apps.microsoft.com/detail/9NDD0QW2VXMS?hl=pt-br&gl=BR&ocid) diretamente da loja oficial no seu PC e aproveite.
 
 <p align="center">
   <img src="docs/MS_NovaHub.png" alt="Pagina do NovaHub na Microsoft Store">
