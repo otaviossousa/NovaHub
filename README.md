@@ -144,6 +144,9 @@ Para gerar o mesmo pacote ZIP portátil disponibilizado nas Releases oficiais:
 .\build.ps1 -Package
 ```
 
+O ZIP portátil e seu checksum SHA-256 são salvos em `artifacts/<versão>/portable/`.
+O pacote MSIX da Store e seu checksum ficam em `artifacts/<versão>/store/`.
+
 ---
 
 ## Documentação oficial do controle
