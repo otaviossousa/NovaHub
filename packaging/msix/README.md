@@ -13,6 +13,7 @@ Para gerar o pacote:
 .\packaging\msix\build-msix.ps1
 ```
 
-O script publica o aplicativo como independente do runtime, monta o pacote e grava o MSIX e seu checksum em `artifacts`.
+O script publica o aplicativo como independente do runtime, monta o pacote e grava o MSIX e seu checksum em `artifacts/<versão>/store/`.
+O layout temporário também fica nessa pasta e é removido após a geração. Os artefatos das versões anteriores são preservados.
 
 O MSIX criado para a Microsoft Store não é assinado localmente. A Store assina o pacote depois da certificação. Não adicione certificados ou arquivos `.pfx` ao repositório.
